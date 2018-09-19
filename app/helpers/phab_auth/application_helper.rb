@@ -3,7 +3,7 @@ module PhabAuth
     def phab_login_link
       l_params = {
         client_id: PhabAuth.client_id,
-        redirect_uri: main_app.root_url + PhabAuth::Engine.mounted_path,
+        redirect_uri: request.base_url + '/' + PhabAuth::Engine.mounted_path,
         response_type: 'code'
       }
       link_to_params = [
