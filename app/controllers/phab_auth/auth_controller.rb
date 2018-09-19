@@ -3,12 +3,14 @@ module PhabAuth
     def auth
       if params[:code]
         require 'net/http'
-        param = {
+        red_url = main_app.root_url + '/' + PhabAuth::Engine.mounted_path
+        red_url.gsub!('http://', 'https://') if Rails.env.production?
+          param = {
           client_id: PhabAuth.client_id,
           client_secret: PhabAuth.client_secret,
           code: params[:code],
           grant_type: 'authorization_code',
-          redirect_uri: main_app.root_url + PhabAuth::Engine.mounted_path
+          redirect_uri: red_url
         }
         uri = URI(PhabAuth.oauthserver_url + '/oauthserver/token/?' + URI.encode_www_form(param))
         uri.path.gsub!(%r{\/+}, '/')
