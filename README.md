@@ -1,10 +1,10 @@
-= PhabAuth
+# PhabAuth
 This gem is used for simplification the login procedure via third party [phabricator](https://secure.phabricator.com/book/phabricator) server.
 
-== Confituring your Phabricator
+## Confituring your Phabricator
 To make your app able using your phabricator facilities for authorisation you have to make the corresponding configuration. Please refer to the Phabricator documentation to achieve this.
 
-== Usage
+## Usage
 Include the gem to your Gemfile:
 
     gem 'phab_auth', git:  'https://github.com/glUk-skywalker/phab_auth.git'
@@ -59,5 +59,5 @@ In the case of passed authorisation, `user_info` will contain something like thi
 In case of failed authorisation, please, check the main log of your app. 
 Proper error handling will be added later (soon).
 
-== License
+## License
 This project uses MIT-LICENSE.
