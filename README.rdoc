@@ -1,5 +1,5 @@
 = PhabAuth
-This gem is used for simplification the login procedure via third party [phabricator](https://secure.phabricator.com/book/phabricator/) server.
+This gem is used for simplification the login procedure via third party [phabricator](https://secure.phabricator.com/book/phabricator) server.
 
 == Confituring your Phabricator
 To make your app able using your phabricator facilities for authorisation you have to make the corresponding configuration. Please refer to the Phabricator documentation to achieve this.
