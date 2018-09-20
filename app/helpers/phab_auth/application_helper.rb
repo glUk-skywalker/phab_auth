@@ -1,7 +1,7 @@
 module PhabAuth
   module ApplicationHelper
     def phab_login_link
-      red_url = request.base_url + '/' + PhabAuth::Engine.mounted_path
+      red_url = main_app.root_url + PhabAuth::Engine.mount_path
       red_url.gsub!('http://', 'https://') if Rails.env.production?
       l_params = {
         client_id: PhabAuth.client_id,

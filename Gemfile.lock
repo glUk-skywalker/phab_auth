@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     phab_auth (0.0.1)
-      rails (~> 4.1)
+      rails (~> 4.2.10)
 
 GEM
   remote: https://rubygems.org/

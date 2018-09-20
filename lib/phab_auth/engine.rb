@@ -2,11 +2,8 @@ module PhabAuth
   class Engine < ::Rails::Engine
     isolate_namespace PhabAuth
 
-    def self.mounted_path
-      route = Rails.application.routes.routes.detect do |route|
-        route.app == self
-      end
-      (route && route.path).spec.to_s.delete('/')
+    def self.mount_path
+      routes.find_script_name({})[1..-1]
     end
   end
 
