@@ -9,6 +9,7 @@ module PhabAuth
     end
 
     def phab_login_url
+      PhabAuth.verify_settings!
       red_url = main_app.root_url + PhabAuth::Engine.mount_path
       red_url.gsub!('http://', 'https://') if Rails.env.production?
       l_params = {
