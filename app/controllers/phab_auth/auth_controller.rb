@@ -1,6 +1,7 @@
 module PhabAuth
   class AuthController < ApplicationController
     def auth
+      redirect_to(main_app.root_url) && return if session[:user_id]
       if params[:code]
         require 'net/http'
         red_url = main_app.root_url + PhabAuth::Engine.mount_path
