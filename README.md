@@ -26,6 +26,7 @@ PhabAuth.setup do |conf|
   conf.client_secret = <client secret>
   conf.oauthserver_url = <phabricator base url>
   conf.create_session_path = < route helper to pass user data to, ex.: :create_session_path>
+  conf.scheme = <'http' or 'https'; is not required, default to 'https'>
 end
 ```
 Mount the gem in your `config/routes.rb` wherever you want:
