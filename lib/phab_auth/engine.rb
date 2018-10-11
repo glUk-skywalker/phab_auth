@@ -13,6 +13,7 @@ module PhabAuth
     self.client_secret = nil
     self.oauthserver_url = nil
     self.create_session_path = nil
+    self.scheme = 'https'
   end
 
   def self.setup(&block)
@@ -24,5 +25,6 @@ module PhabAuth
     raise SettingAbsent.new 'client_secret' unless client_secret
     raise SettingAbsent.new 'oauthserver_url' unless oauthserver_url
     raise SettingAbsent.new 'create_session_path' unless create_session_path
+    raise SettingAbsent.new 'scheme' unless scheme
   end
 end
