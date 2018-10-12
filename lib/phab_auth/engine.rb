@@ -8,7 +8,7 @@ module PhabAuth
   end
 
   class << self
-    mattr_accessor :client_id, :client_secret, :oauthserver_url, :create_session_path
+    mattr_accessor :client_id, :client_secret, :oauthserver_url, :create_session_path, :scheme
     self.client_id = nil
     self.client_secret = nil
     self.oauthserver_url = nil
