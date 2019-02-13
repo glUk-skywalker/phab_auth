@@ -5,7 +5,7 @@ module PhabAuth
       if params[:code]
         require 'net/http'
         red_url = main_app.root_url + PhabAuth::Engine.mount_path
-        red_url.gsub!('http://', PhabAuth::Engine.scheme + '://') if Rails.env.production?
+        red_url.gsub!('http://', 'https://') if Rails.env.production?
         logger.info('Phabricator redirect uri: ' + red_url.to_s)
         param = {
           client_id: PhabAuth.client_id,
